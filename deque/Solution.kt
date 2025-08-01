@@ -31,3 +31,12 @@ class Solution {
         queue.removeLast()
     }
 }
+
+/*
+Class TreeNode is inbuilt in the solution file on leetcode.com.
+When running the code on the website, do not include this class.
+ */
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
+}
