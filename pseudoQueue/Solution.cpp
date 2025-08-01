@@ -3,7 +3,6 @@
 #include <vector>
 using namespace std;
 
-
 /*
 Struct TreeNode is inbuilt in the solution file on leetcode.com.
 When running the code on the website, do not include this struct.
@@ -27,7 +26,7 @@ class Solution {
 public:
     vector<int> closestKValues(TreeNode* root, double targetValue, int targetNumberOfNodes) {
         inOrderSearch(root, targetValue, targetNumberOfNodes);
-        return vector<int>(queue.begin(), queue.end());
+        return vector<int>(queue.begin() + front, queue.end());
     }
 
 private:
