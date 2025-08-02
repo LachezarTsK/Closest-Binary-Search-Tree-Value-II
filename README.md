@@ -17,3 +17,8 @@ In this variant, the inbuilt resizable container for the corresponding programmi
 
 When there is a need to remove an element from the front, “front” is incremented, thus moving it one position closer to the back. If there is a need to remove an element from the back, the inbuilt method for the corresponding container is applied. New elements, just as in the solution with Deque, are always added from the back.
 
+The constraints of the problem statement, namely the maximum number of nodes is no greater than 104, make such an implementation with Pseudo-Deque a feasible and still efficient solution. Alternatively, with larger constraints, the Pseudo-Deque could be implemented as a Circular Array with size equal to the Target Number of Nodes. 
+
+The constraints of the problem statement are as of August 2025, since these sometimes change.
+
+
