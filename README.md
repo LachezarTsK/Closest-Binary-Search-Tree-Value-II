@@ -4,6 +4,7 @@ Challenge at LeetCode.com. Tags: Binary Search Tree, Two Pointers, Depth-First S
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **The solution is implemented in two variants: Deque and Pseudo-Deque.**
+
 -
 **Solutions with Deque: Java, C++, Kotlin, Go.**
 
