@@ -8,7 +8,7 @@ Challenge at LeetCode.com. Tags: Binary Search Tree, Two Pointers, Depth-First S
 
 **Solutions with Deque: Java, C++, Kotlin, Go.**
 
-As of August 2025, of the programming languages I know, only those have an inbuilt deque and/or doubly linked list (applied as deque in this case). Thus, the solution is in those programming languages.
+As of August 2025, of the programming languages I know, only those have an inbuilt Deque and/or Doubly Linked List (applied as Deque in this case). Thus, the solution is in those programming languages.
 
 
 **Solution with Pseudo-Deque: Java, JavaScript, TypeScript, C++, C#, Kotlin, Go.**
