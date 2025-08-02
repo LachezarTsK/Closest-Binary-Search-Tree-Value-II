@@ -3,6 +3,8 @@ Challenge at LeetCode.com. Tags: Binary Search Tree, Two Pointers, Depth-First S
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**The solution is implemented in two variants: Deque and Pseudo-Deque.**
+
 **Solutions with Deque: Java, C++, Kotlin, Go.**
 
 As of August 2025, of the programming languages I know, only those have an inbuilt deque and/or doubly linked list (applied as deque in this case). Thus, the solution is in those programming languages.
