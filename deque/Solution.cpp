@@ -23,30 +23,30 @@ class Solution {
 
 public:
     vector<int> closestKValues(TreeNode* root, double targetValue, int targetNumberOfNodes) const {
-        deque<int> queue;
-        inOrderSearch(root, targetValue, targetNumberOfNodes, queue);
-        return vector<int>(queue.begin(), queue.end());
+        deque<int> deque;
+        inOrderSearch(root, targetValue, targetNumberOfNodes, deque);
+        return vector<int>(deque.begin(), deque.end());
     }
 
 private:
-    void inOrderSearch(TreeNode* root, double targetValue, int targetNumberOfNodes, deque<int>& queue) const {
+    void inOrderSearch(TreeNode* root, double targetValue, int targetNumberOfNodes, deque<int>& deque) const {
         if (root == nullptr) {
             return;
         }
-        inOrderSearch(root->left, targetValue, targetNumberOfNodes, queue);
-        updateQueue(root, targetValue, targetNumberOfNodes, queue);
-        inOrderSearch(root->right, targetValue, targetNumberOfNodes, queue);
+        inOrderSearch(root->left, targetValue, targetNumberOfNodes, deque);
+        updateDeque(root, targetValue, targetNumberOfNodes, deque);
+        inOrderSearch(root->right, targetValue, targetNumberOfNodes, deque);
     }
 
-    void updateQueue(TreeNode* root, double targetValue, int targetNumberOfNodes, deque<int>& queue) const {
-        queue.push_back(root->val);
-        if (queue.size() <= targetNumberOfNodes) {
+    void updateDeque(TreeNode* root, double targetValue, int targetNumberOfNodes, deque<int>& deque) const {
+        deque.push_back(root->val);
+        if (deque.size() <= targetNumberOfNodes) {
             return;
         }
-        if (abs(queue.front() - targetValue) > abs(queue.back() - targetValue)) {
-            queue.pop_front();
+        if (abs(deque.front() - targetValue) > abs(deque.back() - targetValue)) {
+            deque.pop_front();
             return;
         }
-        queue.pop_back();
+        deque.pop_back();
     }
 };
