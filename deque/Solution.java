@@ -6,30 +6,30 @@ import java.util.List;
 public class Solution {
 
     public List<Integer> closestKValues(TreeNode root, double targetValue, int targetNumberOfNodes) {
-        ArrayDeque<Integer> queue = new ArrayDeque<>();
-        inOrderSearch(root, targetValue, targetNumberOfNodes, queue);
-        return new ArrayList<>(queue);
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        inOrderSearch(root, targetValue, targetNumberOfNodes, deque);
+        return new ArrayList<>(deque);
     }
 
-    private void inOrderSearch(TreeNode root, double targetValue, int targetNumberOfNodes, ArrayDeque<Integer> queue) {
+    private void inOrderSearch(TreeNode root, double targetValue, int targetNumberOfNodes, ArrayDeque<Integer> deque) {
         if (root == null) {
             return;
         }
-        inOrderSearch(root.left, targetValue, targetNumberOfNodes, queue);
-        updateQueue(root, targetValue, targetNumberOfNodes, queue);
-        inOrderSearch(root.right, targetValue, targetNumberOfNodes, queue);
+        inOrderSearch(root.left, targetValue, targetNumberOfNodes, deque);
+        updateDeque(root, targetValue, targetNumberOfNodes, deque);
+        inOrderSearch(root.right, targetValue, targetNumberOfNodes, deque);
     }
 
-    private void updateQueue(TreeNode root, double targetValue, int targetNumberOfNodes, ArrayDeque<Integer> queue) {
-        queue.add(root.val);
-        if (queue.size() <= targetNumberOfNodes) {
+    private void updateDeque(TreeNode root, double targetValue, int targetNumberOfNodes, ArrayDeque<Integer> deque) {
+        deque.add(root.val);
+        if (deque.size() <= targetNumberOfNodes) {
             return;
         }
-        if (Math.abs(queue.getFirst() - targetValue) > Math.abs(queue.getLast() - targetValue)) {
-            queue.removeFirst();
+        if (Math.abs(deque.getFirst() - targetValue) > Math.abs(deque.getLast() - targetValue)) {
+            deque.removeFirst();
             return;
         }
-        queue.removeLast();
+        deque.removeLast();
     }
 }
 
