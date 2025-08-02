@@ -5,30 +5,30 @@ import kotlin.collections.ArrayDeque
 class Solution {
 
     fun closestKValues(root: TreeNode?, targetValue: Double, targetNumberOfNodes: Int): List<Int> {
-        val queue = ArrayDeque<Int>()
-        inOrderSearch(root, targetValue, targetNumberOfNodes, queue)
-        return ArrayList<Int>(queue)
+        val deque = ArrayDeque<Int>()
+        inOrderSearch(root, targetValue, targetNumberOfNodes, deque)
+        return ArrayList<Int>(deque)
     }
 
-    private fun inOrderSearch(root: TreeNode?, targetValue: Double, targetNumberOfNodes: Int, queue: ArrayDeque<Int>) {
+    private fun inOrderSearch(root: TreeNode?, targetValue: Double, targetNumberOfNodes: Int, deque: ArrayDeque<Int>) {
         if (root == null) {
             return
         }
-        inOrderSearch(root.left, targetValue, targetNumberOfNodes, queue)
-        updateQueue(root, targetValue, targetNumberOfNodes, queue)
-        inOrderSearch(root.right, targetValue, targetNumberOfNodes, queue)
+        inOrderSearch(root.left, targetValue, targetNumberOfNodes, deque)
+        updateDeque(root, targetValue, targetNumberOfNodes, deque)
+        inOrderSearch(root.right, targetValue, targetNumberOfNodes, deque)
     }
 
-    private fun updateQueue(root: TreeNode, targetValue: Double, targetNumberOfNodes: Int, queue: ArrayDeque<Int>) {
-        queue.add(root.`val`)
-        if (queue.size <= targetNumberOfNodes) {
+    private fun updateDeque(root: TreeNode, targetValue: Double, targetNumberOfNodes: Int, deque: ArrayDeque<Int>) {
+        deque.add(root.`val`)
+        if (deque.size <= targetNumberOfNodes) {
             return
         }
-        if (abs(queue.first() - targetValue) > abs(queue.last() - targetValue)) {
-            queue.removeFirst()
+        if (abs(deque.first() - targetValue) > abs(deque.last() - targetValue)) {
+            deque.removeFirst()
             return
         }
-        queue.removeLast()
+        deque.removeLast()
     }
 }
 
